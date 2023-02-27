@@ -1,0 +1,60 @@
+body {
+    text-align: center;
+}
+
+#logo {
+    align-items: center;
+    border: 1px solid black;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.player-side-box {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ccc;
+}
+
+#msg-box {
+    text-align: center;
+    margin: 10px auto;
+}
+
+#btns-container {
+    text-align: center;
+    margin: 10px;
+}
+
+.game-btns {
+    margin: 5px 10px;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* #msg-btn-box {
+    : center;
+} */
+
+
+
+
+

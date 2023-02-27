@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Slap Game</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1 id="logo">Power Slap</h1>
+    </header>
+    <main>
+        <section class="player-side-box" id="player-one-box">
+            <h4 id="player-one-health">Health left</h4>
+            <h1 id="player-one-name">Slapper1</h1>
+        </section>
+        <section id="main-battle-screen">
+            <div id="player-img-box">
+                <img id="player-img" src="https://i.ibb.co/dmKx9sD/players.png" alt="slap fighter">
+            </div>
+        </section>
+        <section class="player-side-box" id="player-two-box">
+            <h4 id="player-two-health">Health left</h4>
+            <h1 id="player-two-name">Slapper2</h1>
+        </section>
+    </main>
+    <section id="msg-btn-box">
+        <div id="msg-box">
+            <div class="hide" id="confirm-restart">
+                <h2>Are You sure You want to restart your game?</h2>
+                <button class="game-btns" id="yes-restart">Yes, restart</button>
+                <button class="game-btns" id="no-cancel">No, go back</button>
+            </div>
+            <h2 id="msg-line-one">This is my message box one</h2>
+            <h2 id="msg-line-two">This is my message box two</h2>
+        </div>
+        <div id="btns-container">
+            <button class="game-btns" id="start-btn">START</button>
+            <button class="game-btns" id="restart-btn">RESTART</button>
+            <button class="game-btns" id="choice-btn">CHOOSE SLAPPER</button>
+            <button class="game-btns" id="mode-btn">GAME MODE</button>
+        </div>
+    </section>
+</body>
+
+</html>
