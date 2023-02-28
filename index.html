@@ -15,18 +15,30 @@
         <h1 id="logo">Power Slap</h1>
     </header>
     <main>
-        <section class="player-side-box" id="player-one-box">
-            <h4 id="player-one-health">Health left</h4>
-            <h1 id="player-one-name">Slapper1</h1>
-        </section>
-        <section id="main-battle-screen">
-            <div id="player-img-box">
-                <img id="player-img" src="https://i.ibb.co/dmKx9sD/players.png" alt="slap fighter">
+        <section class="pl-side-box" id="pl-one-box">
+            <h1 id="pl-one-name">Slapper1</h1>
+            <h4 class="pl-health-line">Health left: <span id="pl-one-health">100</span>%</h4>
+            <h4 class="pl-strength-line">Strength: <span id="pl-one-strength">0</span></h4>
+            <div class="pl-btns-container" id="pl-one-btns">
+                <button class="pl-btn slap-btn" id="pl-one-slap-btn">Slap</button>
+                <button class="pl-btn super-btn" id="pl-one-super-btn">Super Slap</button>
+                <button class="pl-btn surr-btn" id="pl-one-surr-btn">Surrender</button>
             </div>
         </section>
-        <section class="player-side-box" id="player-two-box">
-            <h4 id="player-two-health">Health left</h4>
-            <h1 id="player-two-name">Slapper2</h1>
+        <section id="main-battle-screen">
+            <div id="pl-img-box">
+                <img id="pl-img" src="https://i.ibb.co/dmKx9sD/players.png" alt="slap fighter">
+            </div>
+        </section>
+        <section class="pl-side-box" id="pl-two-box">
+            <h1 id="pl-two-name">Slapper2</h1>
+            <h4 class="pl-health-line">Health left: <span id="pl-two-health">100</span>%</h4>
+            <h4 class="pl-strength-line">Strength: <span id="pl-two-strength">0</span></h4>
+            <div class="pl-btns-container hide" id="pl-two-btns">
+                <button class="pl-btn slap-btn" id="pl-two-slap-btn">Slap</button>
+                <button class="pl-btn super-btn" id="pl-two-super-btn">Super Slap</button>
+                <button class="pl-btn surr-btn" id="pl-two-surr-btn">Surrender</button>
+            </div>
         </section>
     </main>
     <section id="msg-btn-box">
@@ -36,10 +48,10 @@
                 <button class="game-btns" id="yes-restart">Yes, restart</button>
                 <button class="game-btns" id="no-cancel">No, go back</button>
             </div>
-            <h2 id="msg-line-one">This is my message box one</h2>
-            <h2 id="msg-line-two">This is my message box two</h2>
+            <h2 id="msg-line-one">This is Power Slap. Game On!</h2>
+            <h2 id="msg-line-two">Player 1, you are up first!</h2>
         </div>
-        <div id="btns-container">
+        <div id="game-btns-container">
             <button class="game-btns" id="start-btn">START</button>
             <button class="game-btns" id="restart-btn">RESTART</button>
             <button class="game-btns" id="choice-btn">CHOOSE SLAPPER</button>
