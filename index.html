@@ -12,13 +12,26 @@
 
 <body>
     <header>
-        <h1 id="logo">Power Slap</h1>
+        <div id="logo">
+            <img src="./logo.png" alt="logo">
+        </div>
     </header>
+    <div class="hide" id="game-end-screen">
+        <div id="modal-window">
+            <div id="game-end-msg">Game Over</div>
+            <button id="new-game-btn">New Game</button>
+        </div>
+    </div>
+    <div class="hide" id="game-mode">
+        <button class="pl-mode-btns" id="pl-vs-pl">Player vs Player</button>
+        <button class="pl-mode-btns" id="pl-vs-comp">Player vs Computer</button>
+    </div>
     <main>
         <section class="pl-side-box" id="pl-one-box">
             <h1 id="pl-one-name">Slapper1</h1>
             <h4 class="pl-health-line">Health left: <span id="pl-one-health">100</span>%</h4>
             <h4 class="pl-strength-line">Strength: <span id="pl-one-strength">0</span></h4>
+            <h4 class="pl-supers">Super Slaps Left: <span id="pl-one-supers">2</span></h4>
             <div class="pl-btns-container" id="pl-one-btns">
                 <button class="pl-btn slap-btn" id="pl-one-slap-btn">Slap</button>
                 <button class="pl-btn super-btn" id="pl-one-super-btn">Super Slap</button>
@@ -34,6 +47,7 @@
             <h1 id="pl-two-name">Slapper2</h1>
             <h4 class="pl-health-line">Health left: <span id="pl-two-health">100</span>%</h4>
             <h4 class="pl-strength-line">Strength: <span id="pl-two-strength">0</span></h4>
+            <h4 class="pl-supers">Super Slaps Left: <span id="pl-two-supers">2</span></h4>
             <div class="pl-btns-container hide" id="pl-two-btns">
                 <button class="pl-btn slap-btn" id="pl-two-slap-btn">Slap</button>
                 <button class="pl-btn super-btn" id="pl-two-super-btn">Super Slap</button>
@@ -52,9 +66,9 @@
             <h2 id="msg-line-two">Player 1, you are up first!</h2>
         </div>
         <div id="game-btns-container">
-            <button class="game-btns" id="start-btn">START</button>
-            <button class="game-btns" id="restart-btn">RESTART</button>
+            <!-- <button class="game-btns" id="start-btn">START</button> -->
             <button class="game-btns" id="choice-btn">CHOOSE SLAPPER</button>
+            <button class="game-btns" id="restart-btn">RESTART</button>
             <button class="game-btns" id="mode-btn">GAME MODE</button>
         </div>
     </section>
