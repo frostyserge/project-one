@@ -13,7 +13,7 @@
 <body>
     <header>
         <div id="logo">
-            <img src="./logo.png" alt="logo">
+            <img src="elements/logo.png" alt="logo">
         </div>
     </header>
     <div class="hide" id="game-end-screen">
@@ -23,8 +23,8 @@
         </div>
     </div>
     <div class="hide" id="game-mode">
-        <button class="pl-mode-btns" id="pl-vs-pl">Player vs Player</button>
-        <button class="pl-mode-btns" id="pl-vs-comp">Player vs Computer</button>
+        <button class="pl-mode-btns" id="pl-vs-pl">Player <br> vs <br> Player</button>
+        <button class="pl-mode-btns" id="pl-vs-comp">Player <br> vs <br> Computer</button>
     </div>
     <main>
         <section class="pl-side-box" id="pl-one-box">
@@ -71,7 +71,9 @@
             <button class="game-btns" id="restart-btn">RESTART</button>
             <button class="game-btns" id="mode-btn">GAME MODE</button>
         </div>
+        <audio src="audio/track1.mp3" id="game-music" preload="auto" controls></audio>
     </section>
+    <!-- <button id="music-btn" onclick="audioToggle()">PLAY</button> -->
 </body>
 
 </html>

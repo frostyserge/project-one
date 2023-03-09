@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-image: url("./main-background.jpg");
+    background-image: url("elements/main-background.jpg");
     background-size: cover;
     height: 100vh;
     width: 100vw;
@@ -120,7 +120,18 @@ button {
     position: relative;
     margin-top: 200px;
     font-size: 2rem;
+    width: 30%;
 }
+
+#music {
+    height: 45px;
+    width: 150px;
+    margin: auto;
+}
+
+/* #restart-btn {
+    background-image: url("bottom_buttons/btn_center.png"); */
+/* } */
 
 .hide {
     display: none;
@@ -129,23 +140,3 @@ button {
 .display-flex {
     display: flex;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/* #msg-btn-box {
-    : center;
-} */
-
-
-
-
-
