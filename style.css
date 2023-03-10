@@ -6,8 +6,13 @@ body {
     width: 100vw;
 }
 
+header {
+display: flex;
+}
+
+
 #msg-box h2 {
-    color: #ccc;
+    color: #fff;
 }
 
 #logo {
@@ -19,11 +24,6 @@ body {
     padding: auto 10%;
 }
 
-#main-battle-screen {
-    background-color: #fff;
-    padding-left: 25%;
-    padding-right: 25%;
-}
 
 #game-end-screen {
     /* display: none; */
@@ -44,7 +44,7 @@ body {
 }
 
 #new-game-btn {
-    font-size: 2rem;
+    font-size: 1rem;
     background-color: white;
     border: 1px solid black;
     padding: 10px 5px;
@@ -64,10 +64,45 @@ main {
     width: 55%;
 }
 
+#main-battle-screen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fff;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-items: center;
+}
+
+#pl-img-box {
+    display: flex;
+    width: 100%;
+    align-self: center;
+}
+
+#pl-one-img {
+    display: flex;
+    width: 300px;
+    height: 30%;
+    flex-direction: row;
+    justify-content: start;
+    align-items: baseline;
+}
+
+#pl-two-img {
+    display: flex;
+    width: 300px;
+    height: 30%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
 .pl-side-box {
+    color:#fff;
     margin: 10px;
     padding: 10px;
-    background-color: #ccc;
+    min-width: 25%;
 }
 
 
@@ -78,6 +113,23 @@ main {
 
 button {
     cursor: grabbing;
+    border: none;
+    width: 15%;
+    height: 50px;
+    min-width: 120px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: #c6c6c6 1px 1px;
+    color: #000;
+    line-height: 48px;
+    background: url("bottom_buttons/modal_button_left_gray.jpg") left no-repeat, url("bottom_buttons/modal_button_right_grey.jpg") right no-repeat, url("bottom_buttons/modal_button_repeat_grey.jpg") repeat-x;
+    
+}
+
+button:hover {
+    text-shadow: #801b1b 1px 1px;
+    color: #fff;
+    background: url("bottom_buttons/modal_button_left_red.jpg") left no-repeat, url("bottom_buttons/modal_button_right_red.jpg") right no-repeat, url("bottom_buttons/modal_button_repeat_red.jpg") repeat-x;
 }
 
 .pl-btns-container {
@@ -88,6 +140,7 @@ button {
 }
 
 .pl-btn {
+    align-self: center;
     margin: 3px;
     padding: 3px;
 }
@@ -98,9 +151,10 @@ button {
 }
 
 .game-btns {
+    text-align: center;
     margin: 5px 10px;
     padding: 10px;
-    border-radius: 10%;
+    border-radius: 5%;
 }
 
 #game-mode {
@@ -123,15 +177,28 @@ button {
     width: 30%;
 }
 
-#music {
-    height: 45px;
-    width: 150px;
-    margin: auto;
+#pl-vs-pl {
+    height: 250px;
+    background: none;
 }
 
-/* #restart-btn {
-    background-image: url("bottom_buttons/btn_center.png"); */
-/* } */
+#pl-vs-comp {
+    height: 250px;
+    background: none;
+}
+
+#pl-vs-pl:hover {
+    background-color: #801b1b;
+}
+#pl-vs-comp:hover {
+    background-color: #801b1b;
+}
+
+#game-music {
+    height: 45px;
+    width: 250px;
+    margin: auto;
+}
 
 .hide {
     display: none;
@@ -140,3 +207,30 @@ button {
 .display-flex {
     display: flex;
 }
+
+/* To Do later
+
+/* #restart-btn {
+    background-image: url("bottom_buttons/btn_center.png"); */
+    /* } */
+    
+    /* #pl-health-bars {
+        margin-left: 10%;
+        align-content: center;
+        color: red;
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        justify-content: space-between;
+    }
+    
+    #pl-one-health-pnts {
+        height: 50px;
+        width: 800px;
+        margin-right: 500px;
+    }
+    
+    #pl-two-health-pnts {
+        width: 25%;
+        margin-left: 500px;
+    } */

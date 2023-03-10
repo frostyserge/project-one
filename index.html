@@ -11,10 +11,10 @@
 </head>
 
 <body>
+    <div id="logo">
+        <img src="elements/logo.png" alt="logo">
+    </div>
     <header>
-        <div id="logo">
-            <img src="elements/logo.png" alt="logo">
-        </div>
     </header>
     <div class="hide" id="game-end-screen">
         <div id="modal-window">
@@ -40,7 +40,8 @@
         </section>
         <section id="main-battle-screen">
             <div id="pl-img-box">
-                <img id="pl-img" src="https://i.ibb.co/dmKx9sD/players.png" alt="slap fighter">
+                <img id="pl-one-img" src="elements/barbarian.jpg" alt="player one image">
+                <img id="pl-two-img" src="elements/orc.png" alt="player two image">
             </div>
         </section>
         <section class="pl-side-box" id="pl-two-box">
@@ -71,9 +72,22 @@
             <button class="game-btns" id="restart-btn">RESTART</button>
             <button class="game-btns" id="mode-btn">GAME MODE</button>
         </div>
+        <!-- audio elements -->
+        <audio src="audio/super-slap.wav" id="super-slap-sound"></audio>
+        <audio src="audio/slap.wav" id="slap-sound"></audio>
+        <audio src="audio/start-round.wav" id="start-round"></audio>
+        <audio src="audio/button-click.wav" id="button-click"></audio>
+        <audio src="audio/human-surr.mp3" id="human-surr"></audio>
+        <audio src="audio/orc-surr.wav" id="orc-surr"></audio>
+        <audio src="audio/orc-cheer.wav" id="orc-cheer"></audio>
+        <audio src="audio/human-cheer.wav" id="human-cheer"></audio>
         <audio src="audio/track1.mp3" id="game-music" preload="auto" controls></audio>
     </section>
-    <!-- <button id="music-btn" onclick="audioToggle()">PLAY</button> -->
 </body>
 
 </html>
+<!-- <button id="music-btn" onclick="audioToggle()">PLAY</button> -->
+<!-- <div id="pl-health-bars">
+    <progress id="pl-one-health-pnt" value="100" max="100"></progress>
+    <progress id="pl-two-health-pnt" value="100" max="100"></progress>
+</div> -->
