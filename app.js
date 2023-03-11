@@ -102,6 +102,7 @@ class Slapper {
         // adds to the base damage a strength of 5-10
     }
 };
+
 // players names and specs
 function startGame() {
     player1 = new Slapper("Vinci");
@@ -128,6 +129,7 @@ function startGame() {
     msgLineOne.innerHTML = `This is Power Slap, game on!`;
     msgLineTwo.innerHTML = `${player1.name} is up!`;
 };
+
 function startCompMode() {
     player1 = new Slapper("Vinci");
     player2 = new Slapper("Zork");
@@ -155,6 +157,7 @@ function startCompMode() {
     msgLineTwo.innerText = ``;
 };
 
+//invoking this func in order to set the default game flow 
 startGame();
 
 // player action event listeners
@@ -174,8 +177,6 @@ function newGame() {
 
 function clickSlap() {
     let slapper = turn % 2 ? player1 : player2;
-    // console.log(turn);
-    // console.log(player2);
     turn++;
     if (slapper === player1) {
         player1.slap(player2)
@@ -271,48 +272,50 @@ function surrender(event) {
     msgLineOne.innerHTML = `Oh no, ${loser.name} chickened out!`;
     msgLineTwo.innerHTML = `${winner.name} slapped his way into the Hall of Fame!`;
 };
-  
-    function gameEnd() {
-        //fade out screen to the blur
-        gameOver = true;
-        gameEndScrn.classList.remove("hide");
-        gameEndScrn.classList.add("display-flex");
-        msgLineOne.innerHTML = `Game Over! No more slappin' today!`;
-        msgLineTwo.innerHTML = `Gotta go watch some UFC...`;
-        // grey out screen, dont start a new game right away
-    };
-    
-    function gameMode() {
-        gameModeScrn.classList.remove("hide");
-    };
-    
-    
-    function compSlap() {
-        //use button.click func to use buttons by the computer
-        turn++;
-        // gameModeScrn.classList.add("hide");
-        // pl1Btns.classList.remove("hide");
-        // pl2Btns.classList.add("hide");
-        // msgLineOne.innerHTML = `It's Player VS Computer mode! No mercy!`;
-        // msgLineTwo.innerText = `You are introducing your palm to the opponent first, my friend!`;
-        player2.slap(player1);
-        // console.log(player1);
-        msgLineOne.innerHTML = `${player2.name} did ${player2.strength} damage to ${player1.name}`;
-        msgLineTwo.innerText = `Is that it? ${player1.name} seen worse!`;
-    };
-    
-    function compSuperSlap() {
-        turn++;
-        let damageDone = player2.superSlap(player1)
-        player2.superSlap(player1);
-        msgLineOne.innerHTML = `${player2.name} did ${damageDone} damage to ${player1.name}`;
-        msgLineTwo.innerText = `Dentist is on the way!`;
-    };
 
-    //func for button click sound activation
-    function buttonClick() {
-        buttonClickSound.play();
-    };
+function gameEnd() {
+    //fade out screen to the blur
+    gameOver = true;
+    gameEndScrn.classList.remove("hide");
+    gameEndScrn.classList.add("display-flex");
+    msgLineOne.innerHTML = `Game Over! No more slappin' today!`;
+    msgLineTwo.innerHTML = `Gotta go watch some UFC...`;
+    // grey out screen, dont start a new game right away
+};
+
+function gameMode() {
+    gameModeScrn.classList.remove("hide");
+};
+
+function compSlap() {
+    //use button.click func to use buttons by the computer
+    turn++;
+    // gameModeScrn.classList.add("hide");
+    // pl1Btns.classList.remove("hide");
+    // pl2Btns.classList.add("hide");
+    // msgLineOne.innerHTML = `It's Player VS Computer mode! No mercy!`;
+    // msgLineTwo.innerText = `You are introducing your palm to the opponent first, my friend!`;
+    player2.slap(player1);
+    // console.log(player1);
+    pl1Health.innerText = player1.health;
+    msgLineOne.innerHTML = `${player2.name} did ${player2.strength} damage to ${player1.name}`;
+    msgLineTwo.innerText = `Is that it? ${player1.name} seen worse!`;
+};
+
+function compSuperSlap() {
+    turn++;
+    let damageDone = player2.superSlap(player1)
+    player2.superSlap(player1);
+    pl1Health.innerText = player1.health;
+    pl2Supers.innerHTML = player2.supers;
+    msgLineOne.innerHTML = `${player2.name} did ${damageDone} damage to ${player1.name}`;
+    msgLineTwo.innerText = `Dentist is on the way!`;
+};
+
+//func for button click sound activation
+// function buttonClick() {
+    //     buttonClickSound.play();
+    // };
     
     //function to toggle music player
     
