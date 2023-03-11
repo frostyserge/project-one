@@ -209,28 +209,6 @@ button:hover {
 }
 
 /* To Do later
-
-/* #restart-btn {
-    background-image: url("bottom_buttons/btn_center.png"); */
-    /* } */
-    
-    /* #pl-health-bars {
-        margin-left: 10%;
-        align-content: center;
-        color: red;
-        display: flex;
-        flex-direction: row;
-        width: 80%;
-        justify-content: space-between;
-    }
-    
-    #pl-one-health-pnts {
-        height: 50px;
-        width: 800px;
-        margin-right: 500px;
-    }
-    
-    #pl-two-health-pnts {
-        width: 25%;
-        margin-left: 500px;
-    } */
+/* Health points bar
+/* animate characters
+/* restyle buttons

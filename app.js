@@ -1,3 +1,8 @@
+//to do:
+// animations on characters
+// add an option to choose players
+// refactor the code 
+
 // DOM Constants
 const restartConfirmMsg = document.getElementById("confirm-restart");
 const msgLineOne = document.getElementById("msg-line-one");
@@ -68,9 +73,6 @@ yesRestartBtn.addEventListener("click", startGame);
 gameModeBtn.addEventListener("click", gameMode);
 plVsPlBtn.addEventListener("click", startGame);
 plVsCompBtn.addEventListener("click", startCompMode);
-// allButtons.addEventListener("click", buttonClick);
-
-
 
 
 // player class
@@ -109,7 +111,8 @@ function startGame() {
     player2 = new Slapper("Zork");
     turn = 1;
     gameOver = false;
-    startRoundSound.play(); //doesn't work in Chrome
+    computerMode = false;
+    startRoundSound.play(); //doesn't play automatically in Chrome
     pl1Name.innerHTML = player1.name;
     pl2Name.innerHTML = player2.name;
     pl1Supers.innerHTML = player1.supers;
@@ -182,13 +185,12 @@ function clickSlap() {
         player1.slap(player2)
         if (!computerMode) {
             pl1Btns.classList.add("hide");
-            pl2Btns.classList.remove("hide"); // if !compTurn
+            pl2Btns.classList.remove("hide");
         }
         pl2Health.innerText = player2.health;
         checkPlayerHealth();
         msgLineOne.innerHTML = `${player1.name} did ${player1.strength} damage to ${player2.name}`;
         msgLineTwo.innerText = `Bit of a sloppy slap, do better next time!`;
-        // call a compTurn func
         if (computerMode) {
             setTimeout(compSlap, 2000);
         }
@@ -210,14 +212,13 @@ function clickSuperSlap() {
         let damageDone = player1.superSlap(player2);
         if (!computerMode) {
             pl1Btns.classList.add("hide");
-            pl2Btns.classList.remove("hide"); // if !compTurn 
+            pl2Btns.classList.remove("hide"); 
         }
         pl2Health.innerText = player2.health;
         checkPlayerHealth();
         pl1Supers.innerHTML = player1.supers;
         msgLineOne.innerHTML = `${player1.name} did ${damageDone} damage to ${player2.name}`;
         msgLineTwo.innerText = `${player1.name} almost turned ${player2.name} into a walking dead!`;
-        //call a compTurn func
         if (computerMode) {
             setTimeout(compSuperSlap, 2000);
         }
@@ -268,19 +269,17 @@ function surrender(event) {
         orcSurrSound.play();
     }
     gameOver = true;
-    gameEnd();
+    setTimeout(gameEnd, 2000);
     msgLineOne.innerHTML = `Oh no, ${loser.name} chickened out!`;
     msgLineTwo.innerHTML = `${winner.name} slapped his way into the Hall of Fame!`;
 };
 
 function gameEnd() {
-    //fade out screen to the blur
     gameOver = true;
     gameEndScrn.classList.remove("hide");
     gameEndScrn.classList.add("display-flex");
     msgLineOne.innerHTML = `Game Over! No more slappin' today!`;
     msgLineTwo.innerHTML = `Gotta go watch some UFC...`;
-    // grey out screen, dont start a new game right away
 };
 
 function gameMode() {
@@ -288,15 +287,9 @@ function gameMode() {
 };
 
 function compSlap() {
-    //use button.click func to use buttons by the computer
     turn++;
-    // gameModeScrn.classList.add("hide");
-    // pl1Btns.classList.remove("hide");
-    // pl2Btns.classList.add("hide");
-    // msgLineOne.innerHTML = `It's Player VS Computer mode! No mercy!`;
-    // msgLineTwo.innerText = `You are introducing your palm to the opponent first, my friend!`;
     player2.slap(player1);
-    // console.log(player1);
+    checkPlayerHealth();
     pl1Health.innerText = player1.health;
     msgLineOne.innerHTML = `${player2.name} did ${player2.strength} damage to ${player1.name}`;
     msgLineTwo.innerText = `Is that it? ${player1.name} seen worse!`;
@@ -304,23 +297,18 @@ function compSlap() {
 
 function compSuperSlap() {
     turn++;
-    let damageDone = player2.superSlap(player1)
+    let damageDone = player2.superSlap(player1);   
     player2.superSlap(player1);
+    player2.supers--;
+    checkPlayerHealth();
     pl1Health.innerText = player1.health;
-    pl2Supers.innerHTML = player2.supers;
+    pl2Supers.innerHTML = player2.supers; // need to work on display of superslaps count
     msgLineOne.innerHTML = `${player2.name} did ${damageDone} damage to ${player1.name}`;
     msgLineTwo.innerText = `Dentist is on the way!`;
+    if (superSlapper.supers <= 0) {
+        pl1SuperBtn.classList.add("hide");
+        pl2SuperBtn.classList.add("hide");
+    }
 };
-
-//func for button click sound activation
-// function buttonClick() {
-    //     buttonClickSound.play();
-    // };
-    
-    //function to toggle music player
-    
-    // function audioToggle() {
-        //     return backgroundAudio.isPaused ? backgroundAudio.play() : backgroundAudio.pause();
-        // };
         
        
