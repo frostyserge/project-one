@@ -98,7 +98,7 @@ class Slapper {
         if (this.supers > 0) {
             let damageX = this.strength + Math.floor(Math.random() * 6) + 5;
             opponent.getSlapped(damageX);
-            this.supers--
+            this.supers--;
             return damageX;
         }
         // adds to the base damage a strength of 5-10
@@ -157,7 +157,7 @@ function startCompMode() {
     msgLineTwo.classList.remove("hide");
     gameModeScrn.classList.add("hide");
     msgLineOne.innerHTML = `It's Player VS Computer mode! No mercy!`;
-    msgLineTwo.innerText = ``;
+    msgLineTwo.innerHTML = ``;
 };
 
 //invoking this func in order to set the default game flow 
@@ -299,7 +299,6 @@ function compSuperSlap() {
     turn++;
     let damageDone = player2.superSlap(player1);   
     player2.superSlap(player1);
-    player2.supers--;
     checkPlayerHealth();
     pl1Health.innerText = player1.health;
     pl2Supers.innerHTML = player2.supers; // need to work on display of superslaps count
