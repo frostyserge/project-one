@@ -26,7 +26,6 @@ display: flex;
 
 
 #game-end-screen {
-    /* display: none; */
     top: 0;
     right: 0;
     bottom: 0;
@@ -61,29 +60,31 @@ main {
     flex-direction: row;
     justify-content: space-evenly;
     margin: auto;
-    width: 55%;
+    width: 95%;
 }
 
 #main-battle-screen {
     display: flex;
     flex-wrap: wrap;
+    width: 50%;
     justify-content: space-between;
     background-color: #fff;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5px;
+    padding-right: 5px;
     align-items: center;
 }
 
 #pl-img-box {
     display: flex;
+    justify-content: center;
     width: 100%;
     align-self: center;
 }
 
 #pl-one-img {
     display: flex;
-    width: 300px;
-    height: 30%;
+    width: 45%;
+    height: auto;
     flex-direction: row;
     justify-content: start;
     align-items: baseline;
@@ -91,8 +92,8 @@ main {
 
 #pl-two-img {
     display: flex;
-    width: 300px;
-    height: 30%;
+    width: 45%;
+    height: auto;
     flex-direction: row;
     justify-content: flex-end;
     align-items: baseline;

@@ -1,7 +1,8 @@
 //to do:
-// animations on characters
 // add an option to choose players
 // refactor the code 
+// animations on characters
+// tweak sound volume
 
 // DOM Constants
 const restartConfirmMsg = document.getElementById("confirm-restart");
@@ -222,6 +223,9 @@ function clickSuperSlap() {
         if (computerMode) {
             setTimeout(compSuperSlap, 2000);
         }
+        if (player1.supers <= 0) {
+            pl1SuperBtn.classList.add("hide");
+        }
     } else {
         let damageDone = player2.superSlap(player1);
         pl1Btns.classList.remove("hide");
@@ -232,8 +236,7 @@ function clickSuperSlap() {
         msgLineOne.innerHTML = `${player2.name} did ${damageDone} damage to ${player1.name}`;
         msgLineTwo.innerText = `Heavy hitter!`;
         
-        if (superSlapper.supers <= 0) {
-            pl1SuperBtn.classList.add("hide");
+        if (player2.supers <= 0) {
             pl2SuperBtn.classList.add("hide");
         }
     }
@@ -298,16 +301,15 @@ function compSlap() {
 function compSuperSlap() {
     turn++;
     let damageDone = player2.superSlap(player1);   
-    player2.superSlap(player1);
     checkPlayerHealth();
     pl1Health.innerText = player1.health;
     pl2Supers.innerHTML = player2.supers; // need to work on display of superslaps count
     msgLineOne.innerHTML = `${player2.name} did ${damageDone} damage to ${player1.name}`;
     msgLineTwo.innerText = `Dentist is on the way!`;
-    if (superSlapper.supers <= 0) {
-        pl1SuperBtn.classList.add("hide");
+    if (player2.supers <= 0) {
         pl2SuperBtn.classList.add("hide");
     }
 };
+
         
        
