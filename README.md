@@ -1,4 +1,4 @@
-# project-one
+
 # Power Slap Game URL https://frostyserge.github.io/project-one/
 
 ## User Story
